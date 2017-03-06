@@ -16,7 +16,7 @@
     },
      "autoload": {
         "psr-4": {
-            "jorgegru\\migrate\\": "App/"
+            "jorgegru\\migrate\\": "jorgegru/migrate/App/"
 		}
     }
 }

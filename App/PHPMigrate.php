@@ -1,6 +1,5 @@
 <?php
 
-namespace jorgegru\migrate\App;
 
 
 /**
@@ -9,7 +8,7 @@ namespace jorgegru\migrate\App;
 class PHPMigrate
 {
 	
-	function __construct(argument)
+	public function teste()
 	{
 		# code...
 		echo 'jorge';

@@ -1,0 +1,15 @@
+{
+    "name": "jorgegru/migrate",
+    "description": "Migração de Banco de dados",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jorge Goulart",
+            "email": "jorgegru@gmail.com"
+        }
+    ],
+    "require": {},
+     "autoload": {
+        "App\\": "src"
+    }
+}

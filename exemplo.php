@@ -1,14 +1,76 @@
+#!/usr/bin/env php
 <?php
 
+date_default_timezone_set('America/Sao_Paulo');
 
 require 'vendor/autoload.php';
 
+// Varifica se o PDO mysql
+foreach(PDO::getAvailableDrivers() as $driver)
+{
+	if($driver=='mysql'){
+		$pdoabilitado =1;
+	}
+}
 
-ini_set('display_errors',1);
-ini_set('display_startup_erros',1);
-error_reporting(E_ALL);
+if($pdoabilitado==0){
+?>
+	O PDO Mysql esta desativado.
+<?php
+exit();
+}
+
+
+if (($argc != 3)|| in_array($argv[1], array('--help', '-help', '-h', '-?'))) {
+?>
 
 
 
-$PHPMigrate = new PHPMigrate;
-echo $PHPMigrate->teste();
+  Use:
+  <?php echo $argv[0]; ?> <option> <option>
+
+  <option> Veja exemplo de alguns comandos
+  
+  init                 		"Crie a tabela migrations"
+  create <nome>                 "Cria o arquivo com o nome"
+  migrate                   	"Sobe todo as migrate pro banco de dados"
+
+  
+<?php
+} else {
+
+	$param = $argv[1];
+
+	$settings = require 'settings.php';
+	$PHPMigrate = new PHPMigrate($settings['PHPMigrate']);
+
+	switch ($param) {
+		case 'init':
+
+			$PHPMigrate->init();
+			echo "\nTabela Criada com sucesso\n\n";
+		break;
+		case 'migrate':
+
+			$PHPMigrate->migrate($settings['PHPMigrate']['path']);
+		break;
+		case 'create':
+			$nome = $argv[2];
+			$PHPMigrate->create($settings['PHPMigrate']['path'], $nome);
+		break;
+		default:
+			echo "Comando nao existe";
+			break;
+	}
+
+
+
+	
+
+
+	
+	// echo $PHPMigrate->teste();
+
+	// 'mysql:host=localhost;dbname=datascan;charset=utf8', 'root', 'datascan'
+	// 
+}

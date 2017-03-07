@@ -15,4 +15,16 @@ Para instalar o PHPMigrate via composer
 $ composer require jorgegru/migrate
 ```
 
-É necessario realizar a configuração do banco de dados dentro de vendor/jorgegru/migrate/settings.php
+É necessario realizar a copia para a raiz do projeto para configuração
+
+
+```sh
+$ cp vendor/jorgegru/migrate/PHPMigrateConf.exemplo.php PHPMigrateConf.php
+```
+
+Criar a pasta migrations com a permissão de escrita na raiz do projeto
+
+```sh
+$ mkdir migrations
+$ chmod 777 -R migrations
+```

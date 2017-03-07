@@ -5,11 +5,11 @@ return [
     'PHPMigrate' => [
         'driver' => 'mysql',
         'host' => 'localhost',
-        'database' => 'datascan',
+        'database' => 'database',
         'username' => 'root',
         'password' => '',
         'charset'   => 'utf8',
-        'path'   => 'migrations/',
+        'path'   => __DIR__ . '/migrations/', 
     ],
 
 ];

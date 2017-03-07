@@ -40,7 +40,7 @@ if (($argc < 2 || $argc > 3)|| in_array($argv[1], array('--help', '-help', '-h',
 } else {
 
 	$param = $argv[1];
-	$settings = require __DIR__ .'../../../settings.php';
+	$settings = require __DIR__ .'/../../../settings.php';
 	$PHPMigrate = new PHPMigrate($settings['PHPMigrate']);
 
 	switch ($param) {

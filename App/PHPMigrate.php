@@ -35,10 +35,9 @@ class PHPMigrate
           
             // return self::$conexao -> prepare($query);
         } catch(\PDOException $e) {
-            return false;
+            throw new Exception($e->getMessage());
         } 
 	}
-
 
 	public function init()
 	{
@@ -123,7 +122,7 @@ class PHPMigrate
 			$fp = fopen($pasta.date("Y-m-d-His")."-".$name.".sql", "w");
 			 
 			if($fp){
-				echo "\n\nMigration criada com sucesso\n\n";
+				echo "\n\nMigration ". date("Y-m-d-His")."-".$name.".sql" . "criada com sucesso\n\n";
 			}else{
 				echo "\n\nErro ao criar a migration, por favor verifica a permisssão de escrita da pasta :: ".$pasta."\n\n";
 			}
@@ -135,10 +134,5 @@ class PHPMigrate
             exit("\n\n Por favor configura uma pasta com permisão de escrita para as migrations \n\n");
         }
 	}
-
-
-
-	// public function PHPMigrate(){
-	// }
 }
 

@@ -41,30 +41,26 @@ if (($argc != 3)|| in_array($argv[1], array('--help', '-help', '-h', '-?'))) {
 
 	$param = $argv[1];
 
-	$settings = require '../../../settings.php';
+	throw new Exception($e->getMessage());
 	$PHPMigrate = new PHPMigrate($settings['PHPMigrate']);
 
-	if($PHPMigrate){
+	switch ($param) {
+		case 'init':
 
-		switch ($param) {
-			case 'init':
+			$PHPMigrate->init();
+			echo "\nTabela Criada com sucesso\n\n";
+		break;
+		case 'migrate':
 
-				$PHPMigrate->init();
-				echo "\nTabela Criada com sucesso\n\n";
+			$PHPMigrate->migrate($settings['PHPMigrate']['path']);
+		break;
+		case 'create':
+			$nome = $argv[2];
+			$PHPMigrate->create($settings['PHPMigrate']['path'], $nome);
+		break;
+		default:
+			echo "Comando nao existe";
 			break;
-			case 'migrate':
-
-				$PHPMigrate->migrate($settings['PHPMigrate']['path']);
-			break;
-			case 'create':
-				$nome = $argv[2];
-				$PHPMigrate->create($settings['PHPMigrate']['path'], $nome);
-			break;
-			default:
-				echo "Comando nao existe";
-				break;
-		}
-	}else{
-		exit('Falha na conexão com o banco');
 	}
+
 }

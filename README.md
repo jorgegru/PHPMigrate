@@ -29,25 +29,19 @@ $ mkdir migrations
 $ chmod 777 -R migrations
 ```
 
-
 ### Comandos
-
 
 ```sh
 ## Criar a tabela migrations
-$ vendor/jorgegru/migrate/start init
+$ php vendor/jorgegru/migrate/start init
 
 ## Cria o arquivo na pasta migrations
 ## exemplo NOME_ARQUIVO = create-table-clients / alter-table-clients
-$ vendor/jorgegru/migrate/start create NOME_ARQUIVO
-
-## Para rodar todas as migrate
-$ vendor/jorgegru/migrate/start migrate
+$ php vendor/jorgegru/migrate/start create NOME_ARQUIVO
 ```
 
-###Exemplo Arquivo
-
 ```sql
+## Exemplo de arquivo
 CREATE TABLE IF NOT EXISTS `clients` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(60) NOT NULL,
@@ -57,4 +51,9 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `telefone` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+```
+
+```sh
+## Para rodar todas as migrate
+$ php vendor/jorgegru/migrate/start migrate
 ```

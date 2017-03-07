@@ -21,7 +21,7 @@ exit();
 }
 
 
-if (($argc != 3)|| in_array($argv[1], array('--help', '-help', '-h', '-?'))) {
+if (($argc < 2 || $argc > 3)|| in_array($argv[1], array('--help', '-help', '-h', '-?'))) {
 ?>
 
 
@@ -40,8 +40,6 @@ if (($argc != 3)|| in_array($argv[1], array('--help', '-help', '-h', '-?'))) {
 } else {
 
 	$param = $argv[1];
-
-	throw new Exception($e->getMessage());
 	$PHPMigrate = new PHPMigrate($settings['PHPMigrate']);
 
 	switch ($param) {

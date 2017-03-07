@@ -19,18 +19,5 @@
             "PHPMigrate": "App/"
 		}
     },
-    "license": "LGPL-2.1",
-    "scripts": {
-        "post-root-package-install": [
-
-        ],
-        "post-create-project-cmd": [
-        ],
-        "post-install-cmd": [
-            "php -r \"file_exists('settings.php') || copy('settings.exemplo.php', '../../../settings.php');\""
-        ],
-        "post-update-cmd": [
-
-        ]
-    }
+    "license": "LGPL-2.1"
 }

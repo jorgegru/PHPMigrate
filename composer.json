@@ -27,7 +27,7 @@
         "post-create-project-cmd": [
         ],
         "post-install-cmd": [
-            "php -r \"file_exists('settings.php') || copy('settings.exemplo.php', 'settings.php');\""
+            "php -r \"file_exists('settings.php') || copy('settings.exemplo.php', '../../../settings.php');\""
         ],
         "post-update-cmd": [
 

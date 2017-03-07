@@ -41,7 +41,7 @@ if (($argc != 3)|| in_array($argv[1], array('--help', '-help', '-h', '-?'))) {
 
 	$param = $argv[1];
 
-	$settings = require 'settings.php';
+	$settings = require '../../../settings.php';
 	$PHPMigrate = new PHPMigrate($settings['PHPMigrate']);
 
 	if($PHPMigrate){

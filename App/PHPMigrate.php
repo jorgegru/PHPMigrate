@@ -35,7 +35,7 @@ class PHPMigrate
           
             // return self::$conexao -> prepare($query);
         } catch(\PDOException $e) {
-            exit("Desculpe o transtorno, houve uma falha em nosso sistema, por favor enviar a linha de erro abaixo ao administrador<hr /> Error -> Falha na conexão com o Banco de Dados -> ".date("d/n/Y G:i:s"));
+            return false;
         } 
 	}
 

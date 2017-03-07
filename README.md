@@ -1,6 +1,7 @@
 # PHPMigrate
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+[![Build Status](https://travis-ci.org/jorgegru/PHPMigrate.svg?branch=master)](https://travis-ci.org/jorgegru/PHPMigrate)
+
 
 PHPMigrate é uma biblioteca escrita em PHP para facilitar o controle de criação de tabela e alteração. Nele podemos registrar nossas migration em apenas um lugar e automatizar o processo de atualização de banco de dados
 

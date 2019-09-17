@@ -44,7 +44,7 @@ class PHPMigrate
 		$sql_migration = "CREATE TABLE IF NOT EXISTS `migrations` (
 							  `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
 							  `batch` int(11) NOT NULL,
-							  `data_table` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+							  `data_table` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 							) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 		$sqq = self::$db-> prepare($sql_migration);
 		$sqq -> execute();
